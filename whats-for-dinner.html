@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's For Dinner</title>
+
+  <!-- start of styles links -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="whats-for-dinner.css">
+  <!-- end of styles links -->
+</head>
+
+<body>
+  <!-- start of Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white fixed-top main-navbar">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+        <span class="brand-icon d-flex align-items-center justify-content-center">
+          <i aria-hidden="true" class="fa-solid fa-utensils text-white"></i>
+        </span>
+        <span>
+          <span class="brand-text d-block">What's For Dinner</span>
+          <span class="brand-subtitle d-block text-secondary">Your daily meal inspiration</span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
+          <li class="nav-item">
+            <a id="savedRecipesBtn" class="nav-link nav_action_link" href="#" aria-label="Saved recipes">
+              <i aria-hidden="true" class="fa-solid fa-bookmark"></i>
+              <span class="d-lg-none ms-2">Saved Recipes</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="recentRecipesBtn" class="nav-link nav_action_link" href="#" aria-label="Recent recipes">
+              <i aria-hidden="true" class="fa-solid fa-clock-rotate-left"></i>
+              <span class="d-lg-none ms-2">Recent Recipes</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="settingsBtn" class="nav-link nav_action_link" href="#" aria-label="Settings">
+              <i aria-hidden="true" class="fa-solid fa-gear"></i>
+              <span class="d-lg-none ms-2">Settings</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="profileBtn" class="nav-link nav_profile_link" href="#" aria-label="Profile">
+              <img id="profileImage" class="profile_img" src="dinner-images/live_avatar.jpg"
+                alt="Profile image">
+              <span class="d-lg-none ms-2">Profile</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- end of Navbar -->
+
+  <main>
+    <!-- start of home section -->
+    <section id="home" class="home dinner-section">
+      <div class="container">
+        <div id="recipeCard" class="row g-0 dinner_card bg-white rounded-4 overflow-hidden mx-auto">
+          <!-- start of recipe photo -->
+          <div class="col-lg-5">
+            <div class="dinner_photo_parent h-100">
+              <img id="recipeImage" class="dinner_img" data-images-folder="dinner-images/" src="dinner-images/live_carbonara.png"
+                alt="Recipe image">
+
+              <div class="dinner_rate bg-white rounded-pill d-flex align-items-center gap-2">
+                <i aria-hidden="true" class="fa-solid fa-star"></i>
+                <span id="recipeRating" class="rate_num fw-bold">4.8</span>
+                <span id="recipeReviews" class="rate_reviews text-secondary">(234 reviews)</span>
+              </div>
+
+              <div class="dinner_stats bg-white rounded-4 d-flex justify-content-around text-center">
+                <div class="stats_item">
+                  <i aria-hidden="true" class="fa-solid fa-clock text-main"></i>
+                  <p class="mb-1 text-secondary">Prep Time</p>
+                  <h6  class="mb-0 fw-bold"><span id="prepTime"> 15</span> min</h6>
+                </div>
+                <div class="stats_item">
+                  <i aria-hidden="true" class="fa-solid fa-fire-burner text-main"></i>
+                  <p class="mb-1 text-secondary">Cook Time</p>
+                  <h6 id="cookTime" class="mb-0 fw-bold">20 min</h6>
+                </div>
+                <div class="stats_item">
+                  <i aria-hidden="true" class="fa-solid fa-users text-blue"></i>
+                  <p class="mb-1 text-secondary">Servings</p>
+                  <h6 id="servingsCount" class="mb-0 fw-bold">4 people</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of recipe photo -->
+
+          <!-- start of recipe content -->
+          <div class="col-lg-7">
+            <div class="recipe_content h-100">
+              <div class="d-flex justify-content-between align-items-start gap-3 mb-4">
+                <div class="zaza">
+                  <div class="recipe_tags d-flex align-items-center gap-2 mb-3">
+                    <span id="difficultyBadge" class="recipe_tag tag_easy">Easy</span>
+                    <span id="cuisineBadge" class="recipe_tag tag_type">Italian</span>
+                  </div>
+                  <h1 id="recipeTitle" class="recipe_title mb-2">Creamy Spaghetti Carbonara</h1>
+                  <p id="recipeDescription" class="recipe_p text-secondary mb-0">
+                    A classic Italian pasta dish with eggs, cheese, and pancetta.
+                  </p>
+<div id="warning" class="recipe_warning d-flex align-items-center gap-3 mb-4 d-none">
+  <div class="recipe_warning_icon d-flex align-items-center justify-content-center">
+    <i class="fa-solid fa-triangle-exclamation"></i>
+  </div>
+
+  <div>
+    <h3 class="recipe_warning_title mb-1">
+      Extended Preparation Time
+    </h3>
+
+    <p class="recipe_warning_text mb-0">
+      This recipe requires more than 45 minutes to prepare. Plan accordingly!
+    </p>
+  </div>
+</div>
+                </div>
+
+                <div class="recipe_actions d-flex gap-2">
+                  <button id="saveRecipeBtn" class="recipe_action_btn" type="button" aria-label="Save recipe">
+                    <i aria-hidden="true" class="fa-solid fa-bookmark"></i>
+                  </button>
+                  <button id="shareRecipeBtn" class="recipe_action_btn" type="button" aria-label="Share recipe">
+                    <i aria-hidden="true" class="fa-solid fa-share-nodes"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div id="preparationAlert" class="recipe_alert d-none" role="alert">
+                <i aria-hidden="true" class="fa-solid fa-triangle-exclamation"></i>
+                <div>
+                  <h6 id="alertTitle" class="mb-1 fw-bold">Extended Preparation Time</h6>
+                  <p id="alertDescription" class="mb-0">This recipe requires more than 45 minutes to prepare. Plan accordingly!</p>
+                </div>
+              </div>
+
+              <!-- start of recipe tabs -->
+              <ul class="nav nav-tabs recipe_tabs" id="recipeTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients-pane"
+                    type="button" role="tab" aria-controls="ingredients-pane" aria-selected="true">
+                    <i aria-hidden="true" class="fa-solid fa-list-check me-2"></i>Ingredients
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="instructions-tab" data-bs-toggle="tab" data-bs-target="#instructions-pane"
+                    type="button" role="tab" aria-controls="instructions-pane" aria-selected="false">
+                    <i aria-hidden="true" class="fa-solid fa-book-open me-2"></i>Instructions
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="nutrition-tab" data-bs-toggle="tab" data-bs-target="#nutrition-pane"
+                    type="button" role="tab" aria-controls="nutrition-pane" aria-selected="false">
+                    <i aria-hidden="true" class="fa-solid fa-chart-pie me-2"></i>Nutrition
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="tips-tab" data-bs-toggle="tab" data-bs-target="#tips-pane" type="button"
+                    role="tab" aria-controls="tips-pane" aria-selected="false">
+                    <i aria-hidden="true" class="fa-solid fa-lightbulb me-2"></i>Chef's Tips
+                  </button>
+                </li>
+              </ul>
+
+              <div class="tab-content recipe_tab_content" id="recipeTabsContent">
+                <!-- start of ingredients tab -->
+                <div class="tab-pane fade show active" id="ingredients-pane" role="tabpanel" aria-labelledby="ingredients-tab" tabindex="0">
+                  <div id="ingredientsList" class="ingredients_box">
+                    <div class="ingredients_item d-flex align-items-center gap-3">
+                      <span class="ingredients_num">1</span>
+                      <span id="ingrid1" class="ingredients_text">400g spaghetti pasta</span>
+                    </div>
+                    <div class="ingredients_item d-flex align-items-center gap-3">
+                      <span class="ingredients_num">2</span>
+                      <span id="ingrid2" class="ingredients_text">200g pancetta or bacon, diced</span>
+                    </div>
+                    <div class="ingredients_item d-flex align-items-center gap-3">
+                      <span class="ingredients_num">3</span>
+                      <span id="ingrid3" class="ingredients_text">4 large eggs</span>
+                    </div>
+                    <div class="ingredients_item d-flex align-items-center gap-3">
+                      <span class="ingredients_num">4</span>
+                      <span id="ingrid4" class="ingredients_text">1 cup parmesan cheese, grated</span>
+                    </div>
+                    <div class="ingredients_item d-flex align-items-center gap-3">
+                      <span class="ingredients_num">5</span>
+                      <span id="ingrid5" class="ingredients_text">Black pepper to taste</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- end of ingredients tab -->
+
+                <!-- start of instructions tab -->
+                <div class="tab-pane fade" id="instructions-pane" role="tabpanel" aria-labelledby="instructions-tab" tabindex="0">
+                  <div id="instructionsList" class="instructions_box">
+                    <div class="instructions_item d-flex align-items-start gap-3">
+                      <span class="instructions_num">1</span>
+                      <p id="instruct1" class="instructions_text mb-0">Cook spaghetti according to package directions until al dente.</p>
+                    </div>
+                    <div class="instructions_item d-flex align-items-start gap-3">
+                      <span class="instructions_num">2</span>
+                      <p  id="instruct2" class="instructions_text mb-0">Fry pancetta until crispy, then add garlic for the last minute.</p>
+                    </div>
+                    <div class="instructions_item d-flex align-items-start gap-3">
+                      <span class="instructions_num">3</span>
+                      <p  id="instruct3" class="instructions_text mb-0">Whisk eggs with parmesan cheese and black pepper.</p>
+                    </div>
+                    <div class="instructions_item d-flex align-items-start gap-3">
+                      <span class="instructions_num">4</span>
+                      <p  id="instruct4" class="instructions_text mb-0">Toss hot pasta with pancetta and remove from heat.</p>
+                    </div>
+                    <div class="instructions_item d-flex align-items-start gap-3">
+                      <span class="instructions_num">5</span>
+                      <p  id="instruct5" class="instructions_text mb-0">Add egg mixture quickly, using pasta water to create a creamy sauce.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- end of instructions tab -->
+
+                <!-- start of nutrition tab -->
+                <div class="tab-pane fade" id="nutrition-pane" role="tabpanel" aria-labelledby="nutrition-tab" tabindex="0">
+                  <div id="nutritionList" class="row g-3 nutrition_box">
+                    <div class="col-md-6">
+                      <div class="nutrition_item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="nutrition_icon bg-pink text-main"><i aria-hidden="true" class="fa-solid fa-fire"></i></span>
+                          <span class="nutrition_name">Calories</span>
+                        </div>
+                        <strong id="caloriesValue" class="nutrition_value">520 kcal</strong>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="nutrition_item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="nutrition_icon bg-span1 text-blue"><i aria-hidden="true" class="fa-solid fa-dumbbell"></i></span>
+                          <span class="nutrition_name">Protein</span>
+                        </div>
+                        <strong id="proteinValue" class="nutrition_value">28g</strong>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="nutrition_item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="nutrition_icon bg-span4 text-main"><i aria-hidden="true" class="fa-solid fa-wheat-awn"></i></span>
+                          <span class="nutrition_name">Carbohydrates</span>
+                        </div>
+                        <strong id="carbsValue" class="nutrition_value">58g</strong>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="nutrition_item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="nutrition_icon bg-span5 text-danger"><i aria-hidden="true" class="fa-solid fa-droplet"></i></span>
+                          <span class="nutrition_name">Fat</span>
+                        </div>
+                        <strong id="fatValue" class="nutrition_value">18g</strong>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="nutrition_item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="nutrition_icon bg-span3 text-success"><i aria-hidden="true" class="fa-solid fa-seedling"></i></span>
+                          <span class="nutrition_name">Fiber</span>
+                        </div>
+                        <strong id="fiberValue" class="nutrition_value">3g</strong>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="nutrition_item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="nutrition_icon bg-span7 text-pink"><i aria-hidden="true" class="fa-solid fa-cube"></i></span>
+                          <span class="nutrition_name">Sodium</span>
+                        </div>
+                        <strong id="sodiumValue" class="nutrition_value">680mg</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end of nutrition tab -->
+
+                <!-- start of tips tab -->
+                <div class="tab-pane fade" id="tips-pane" role="tabpanel" aria-labelledby="tips-tab" tabindex="0">
+                  <div id="tipsList" class="tips_box">
+                    <div class="tips_item d-flex align-items-center gap-3">
+                      <span class="tips_icon"><i aria-hidden="true" class="fa-solid fa-check"></i></span>
+                      <p id="tip1" class="tips_text mb-0">Use room temperature eggs for a smoother sauce.</p>
+                    </div>
+                    <div class="tips_item d-flex align-items-center gap-3">
+                      <span class="tips_icon"><i aria-hidden="true" class="fa-solid fa-check"></i></span>
+                      <p id="tip2" class="tips_text mb-0">Never add egg mixture over direct heat.</p>
+                    </div>
+                    <div class="tips_item d-flex align-items-center gap-3">
+                      <span class="tips_icon"><i aria-hidden="true" class="fa-solid fa-check"></i></span>
+                      <p id="tip3" class="tips_text mb-0">Save pasta water before draining.</p>
+                    </div>
+                    <div class="tips_item d-flex align-items-center gap-3">
+                      <span class="tips_icon"><i aria-hidden="true" class="fa-solid fa-check"></i></span>
+                      <p id="tip4" class="tips_text mb-0">Serve immediately while creamy.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- end of tips tab -->
+              </div>
+              <!-- end of recipe tabs -->
+
+              <div class="recipe_footer">
+                <button onclick="dinner()" id="tryAnotherRecipeBtn" class="btn try_btn bg_gradiant1 text-white" type="button">
+                  <i aria-hidden="true" class="fa-solid fa-arrows-rotate me-2"></i>Try Another Recipe
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- end of recipe content -->
+        </div>
+      </div>
+    </section>
+    <!-- end of home section -->
+  </main>
+
+  <!-- start of scripts links -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="./js/whats-for-dinner.js"></script>
+  <!-- end of scripts links -->
+</body>
+
+</html>
